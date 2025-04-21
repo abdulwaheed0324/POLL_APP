@@ -28,7 +28,7 @@ const startQuiz = () => {
     cat = category.value,
     diff = difficulty.value;
   loadingAnimation();
-  const url = `https://opentdb.com/api.php?amount=10`;
+  const url = `https://opentdb.com/api.php?amount=${num}&category=${cat}&difficulty=${diff}&type=multiple;`;
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
