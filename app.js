@@ -28,7 +28,7 @@ const startQuiz = () => {
     cat = category.value,
     diff = difficulty.value;
   loadingAnimation();
-  const url = `https://opentdb.com/api.php?amount=${num}&category=${cat}&difficulty=${diff}&type=multiple`;
+  const url = `https://opentdb.com/api.php?amount=10`;
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
@@ -117,7 +117,7 @@ const loadingAnimation = () => {
 function defineProperty() {
   var osccred = document.createElement("div");
   osccred.innerHTML =
-    "A Project By <a href='https://www.youtube.com/@opensourcecoding' target=_blank>Open Source Coding</a>";
+    "A Project By Talha Jawaid and Abdul Waheed";
   osccred.style.position = "absolute";
   osccred.style.bottom = "0";
   osccred.style.right = "0";
