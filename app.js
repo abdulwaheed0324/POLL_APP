@@ -1,5 +1,3 @@
-
-
 const progressBar = document.querySelector(".progress-bar"),
   progressText = document.querySelector(".progress-text");
 
@@ -28,7 +26,7 @@ const startQuiz = () => {
     cat = category.value,
     diff = difficulty.value;
   loadingAnimation();
-  const url = `https://opentdb.com/api.php?amount=${num}&category=${cat}&difficulty=${diff}&type=multiple;`;
+  const url = `https://opentdb.com/api.php?amount=${num}&category=${cat}&difficulty=${diff}&type=multiple`;
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
@@ -117,7 +115,7 @@ const loadingAnimation = () => {
 function defineProperty() {
   var osccred = document.createElement("div");
   osccred.innerHTML =
-    "A Project By Talha Jawaid and Abdul Waheed";
+    "A Project By TALHA JAWAID AND ABDUL WAHEED";
   osccred.style.position = "absolute";
   osccred.style.bottom = "0";
   osccred.style.right = "0";
