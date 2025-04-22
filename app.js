@@ -113,21 +113,21 @@ const loadingAnimation = () => {
   }, 500);
 };
 function defineProperty() {
-  var osccred = document.createElement("div");
-  osccred.innerHTML =
+  var divElement = document.createElement("div");
+  divElement.innerHTML =
     "A Project By TALHA JAWAID AND ABDUL WAHEED";
-  osccred.style.position = "absolute";
-  osccred.style.bottom = "0";
-  osccred.style.right = "0";
-  osccred.style.fontSize = "10px";
-  osccred.style.color = "#000";
-  osccred.style.fontFamily = "sans-serif";
-  osccred.style.padding = "5px";
-  osccred.style.background = "#fff";
-  osccred.style.borderTopLeftRadius = "5px";
-  osccred.style.borderBottomRightRadius = "5px";
-  osccred.style.boxShadow = "0 0 5px #ccc";
-  document.body.appendChild(osccred);
+ divElement.style.position = "absolute";
+  divElement.style.bottom = "0";
+  divElement.style.right = "0";
+  divElement.style.fontSize = "10px";
+  divElement.style.color = "#000";
+  divElement.style.fontFamily = "sans-serif";
+  divElement.style.padding = "5px";
+  divElement.style.background = "#fff";
+  divElement.style.borderTopLeftRadius = "5px";
+  divElement.style.borderBottomRightRadius = "5px";
+  divElement.style.boxShadow = "0 0 5px #ccc";
+  divElement.body.appendChild(osccred);
 }
 
 defineProperty();
