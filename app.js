@@ -3,8 +3,8 @@ const progressBar = document.querySelector(".progress-bar"),
 
 const progress = (value) => {
   const percentage = (value / time) * 100;
-  progressBar.style.width = ${percentage}%;
-  progressText.innerHTML = ${value};
+  progressBar.style.width = `${percentage}%`;
+  progressText.innerHTML = `${value}`;
 };
 
 const startBtn = document.querySelector(".start"),
@@ -26,7 +26,7 @@ const startQuiz = () => {
     cat = category.value,
     diff = difficulty.value;
   loadingAnimation();
-  const url = https://opentdb.com/api.php?amount=${num}&category=${cat}&difficulty=${diff}&type=multiple;
+  const url = `https://opentdb.com/api.php?amount=${num}&category=${cat}&difficulty=${diff}&type=multiple`;
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
@@ -56,20 +56,20 @@ const showQuestion = (question) => {
   answersWrapper.innerHTML = "";
   answers.sort(() => Math.random() - 0.5);
   answers.forEach((answer) => {
-    answersWrapper.innerHTML += 
+    answersWrapper.innerHTML += `
                   <div class="answer ">
             <span class="text">${answer}</span>
             <span class="checkbox">
               <i class="fas fa-check"></i>
             </span>
           </div>
-        ;
+        `;
   });
 
-  questionNumber.innerHTML =  Question <span class="current">${
+  questionNumber.innerHTML = ` Question <span class="current">${
     questions.indexOf(question) + 1
   }</span>
-            <span class="total">/${questions.length}</span>;
+            <span class="total">/${questions.length}</span>`;
   //add event listener to each answer
   const answersDiv = document.querySelectorAll(".answer");
   answersDiv.forEach((answer) => {
@@ -203,7 +203,7 @@ const showScore = () => {
   endScreen.classList.remove("hide");
   quiz.classList.add("hide");
   finalScore.innerHTML = score;
-  totalScore.innerHTML = / ${questions.length};
+  totalScore.innerHTML = `/ ${questions.length}`;
 };
 
 const restartBtn = document.querySelector(".restart");
@@ -214,3 +214,4 @@ restartBtn.addEventListener("click", () => {
 const playAdudio = (src) => {
   const audio = new Audio(src);
   audio.play();
+};
