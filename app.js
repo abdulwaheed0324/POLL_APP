@@ -116,7 +116,7 @@ function defineProperty() {
   var osccred = document.createElement("div");
   osccred.innerHTML =
     "A Project By TALHA JAWAID AND ABDUL WAHEED";
- osccred.style.position = "absolute";
+  osccred.style.position = "absolute";
   osccred.style.bottom = "0";
   osccred.style.right = "0";
   osccred.style.fontSize = "10px";
@@ -127,7 +127,7 @@ function defineProperty() {
   osccred.style.borderTopLeftRadius = "5px";
   osccred.style.borderBottomRightRadius = "5px";
   osccred.style.boxShadow = "0 0 5px #ccc";
-  osccred.body.appendChild(osccred);
+  document.body.appendChild(osccred);
 }
 
 defineProperty();
