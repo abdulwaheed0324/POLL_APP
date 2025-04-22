@@ -144,3 +144,74 @@ nextBtn.addEventListener("click", () => {
   nextBtn.style.display = "none";
 });
 
+const checkAnswer = () => {
+  clearInterval(timer);
+  const selectedAnswer = document.querySelector(".answer.selected");
+  if (selectedAnswer) {
+    const answer = selectedAnswer.querySelector(".text").innerHTML;
+    console.log(currentQuestion);
+    if (answer === questions[currentQuestion - 1].correct_answer) {
+      score++;
+      selectedAnswer.classList.add("correct");
+    } else {
+      selectedAnswer.classList.add("wrong");
+      const correctAnswer = document
+        .querySelectorAll(".answer")
+        .forEach((answer) => {
+          if (
+            answer.querySelector(".text").innerHTML ===
+            questions[currentQuestion - 1].correct_answer
+          ) {
+            answer.classList.add("correct");
+          }
+        });
+    }
+  } else {
+    const correctAnswer = document
+      .querySelectorAll(".answer")
+      .forEach((answer) => {
+        if (
+          answer.querySelector(".text").innerHTML ===
+          questions[currentQuestion - 1].correct_answer
+        ) {
+          answer.classList.add("correct");
+        }
+      });
+  }
+  const answersDiv = document.querySelectorAll(".answer");
+  answersDiv.forEach((answer) => {
+    answer.classList.add("checked");
+  });
+
+  submitBtn.style.display = "none";
+  nextBtn.style.display = "block";
+};
+
+const nextQuestion = () => {
+  if (currentQuestion < questions.length) {
+    currentQuestion++;
+    showQuestion(questions[currentQuestion - 1]);
+  } else {
+    showScore();
+  }
+};
+
+const endScreen = document.querySelector(".end-screen"),
+  finalScore = document.querySelector(".final-score"),
+  totalScore = document.querySelector(".total-score");
+const showScore = () => {
+  endScreen.classList.remove("hide");
+  quiz.classList.add("hide");
+  finalScore.innerHTML = score;
+  totalScore.innerHTML = `/ ${questions.length}`;
+};
+
+const restartBtn = document.querySelector(".restart");
+restartBtn.addEventListener("click", () => {
+  window.location.reload();
+});
+
+const playAdudio = (src) => {
+  const audio = new Audio(src);
+  audio.play();
+};
