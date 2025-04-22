@@ -120,7 +120,7 @@ function defineProperty() {
   osccred.style.bottom = "0";
   osccred.style.right = "0";
   osccred.style.fontSize = "10px";
-  osccred.style.color = "#ccc";
+  osccred.style.color = "#000";
   osccred.style.fontFamily = "sans-serif";
   osccred.style.padding = "5px";
   osccred.style.background = "#fff";
